@@ -1,0 +1,50 @@
+//1.MirrorArray function!
+
+function mirrorArray(array) {
+    const mirroredArray = [...array];
+    const reversedArray = array.slice().reverse();
+    mirroredArray.push(...reversedArray);
+
+    return mirroredArray
+}
+
+console.log(mirrorArray([1, 2, 3, 4]));
+console.log(mirrorArray(['A', 'B', 'C', 'D']));
+
+//2.Adults Function
+
+function adults(people) {//
+    return people
+    .filter(person => person.age >= 18)
+   .map(person => person.name);
+}
+
+const ppl = [
+    {name: 'John', age: 20},
+    {name: 'Jim', age:13},
+    {name: 'Jane', age:18},
+    {name: 'Bob', age:7}
+];
+
+console.log(adults(ppl));
+
+//3.function divisibleByThreePairSum
+
+function divisibleByThreePairSum(array) {
+    const result =[];
+    for(let i = 0; i < array.length; i++) {
+        for (let j = i + 1; j < array.length; j++) {
+            if((array [i] + array[j]) % 3 === 0) {
+                result.push([i,j]);
+            }
+        }
+
+    }
+    return result;
+}
+
+const arr1 = divisibleByThreePairSum([1, 6, 3, 4, 2, 0]);
+console.log(arr1);
+
+const arr2 = divisibleByThreePairSum([8, 3, 5, 9, 2]);
+console.log(arr2)
